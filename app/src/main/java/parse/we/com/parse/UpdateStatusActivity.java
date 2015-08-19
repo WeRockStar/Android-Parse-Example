@@ -48,10 +48,11 @@ public class UpdateStatusActivity extends Activity {
                         statusObj.saveInBackground(new SaveCallback() {
                             @Override
                             public void done(ParseException e) {
-                                if (e == null) {
+                                if (e != null) {
                                     Intent intent = new Intent(UpdateStatusActivity.this, HomepageActivity.class);
                                     startActivity(intent);
                                 } else {
+                                    Log.e("ERROR" , e.getMessage().toString());
                                     AlertDialog.Builder builder = new AlertDialog.Builder(UpdateStatusActivity.this);
                                     builder.setTitle("Warning...");
                                     builder.setMessage("Status not working...");
