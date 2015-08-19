@@ -36,23 +36,23 @@ public class UpdateStatusActivity extends Activity {
             public void onClick(View v) {
                 //get username current
                 ParseUser cuParseUser = ParseUser.getCurrentUser();
-                String username = cuParseUser.getUsername().toString();
+                String username = cuParseUser.getUsername();
                 //status text
                 String status = updateStatusEditText.getText().toString().trim();
                 try {
                     if (!status.isEmpty()) {
                         //save to parse
                         ParseObject statusObj = ParseObject.create("Status");
-                        statusObj.put("Status", status);
+                        statusObj.put("status", status);
                         statusObj.put("username", username);
                         statusObj.saveInBackground(new SaveCallback() {
                             @Override
-                            public void done(ParseException e) {
-                                if (e != null) {
+                            public void done(ParseException ee) {
+                                if (ee == null) {
                                     Intent intent = new Intent(UpdateStatusActivity.this, HomepageActivity.class);
                                     startActivity(intent);
                                 } else {
-                                    Log.e("ERROR" , e.getMessage().toString());
+                                    Log.e("ERROR", ee.getMessage());
                                     AlertDialog.Builder builder = new AlertDialog.Builder(UpdateStatusActivity.this);
                                     builder.setTitle("Warning...");
                                     builder.setMessage("Status not working...");

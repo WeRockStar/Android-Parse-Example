@@ -19,6 +19,7 @@ public class HomepageActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+
         ParseUser cuParseUser = ParseUser.getCurrentUser();
         if (cuParseUser != null) {
             Toast.makeText(getApplicationContext() , "Welcome" , Toast.LENGTH_SHORT).show();
