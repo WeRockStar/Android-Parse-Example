@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -30,8 +29,8 @@ public class HomepageActivity extends ListActivity {
         setContentView(R.layout.activity_homepage);
 
         ParseUser cuParseUser = ParseUser.getCurrentUser();
+        //TODO After LogIn
         if (cuParseUser != null) {
-//            Toast.makeText(getApplicationContext() , "Welcome" , Toast.LENGTH_SHORT).show();
             ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Status");
             query.orderByDescending("CreatedAt");
             query.findInBackground(new FindCallback<ParseObject>() {
@@ -47,7 +46,7 @@ public class HomepageActivity extends ListActivity {
                     }
                 }
             });
-        } else {
+        } else { //TODO Not Authen
             Intent intent = new Intent(HomepageActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
