@@ -7,6 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.parse.LogInCallback;
+import com.parse.ParseException;
+import com.parse.ParseUser;
+
 public class LoginActivity extends Activity {
 
 
@@ -23,6 +27,18 @@ public class LoginActivity extends Activity {
         loginButton = (Button) findViewById(R.id.loginButton);
         passwordLogin = (EditText) findViewById(R.id.passwordLogin);
         usernameLogin = (EditText) findViewById(R.id.usernameLogin);
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ParseUser.logInInBackground("", "", new LogInCallback() {
+                    @Override
+                    public void done(ParseUser parseUser, ParseException e) {
+
+                    }
+                });
+            }
+        });
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
