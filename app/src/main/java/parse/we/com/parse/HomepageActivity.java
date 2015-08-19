@@ -69,7 +69,6 @@ public class HomepageActivity extends ListActivity {
                     //TODO Update
                     Intent intent = new Intent(HomepageActivity.this, UpdateStatusActivity.class);
                     startActivity(intent);
-                    finish();
                     break;
                 case R.id.logoutUser:
                     //TODO LogOut

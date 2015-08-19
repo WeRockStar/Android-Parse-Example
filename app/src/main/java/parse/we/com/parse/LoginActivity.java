@@ -30,6 +30,8 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
         registerButton = (Button) findViewById(R.id.registerButton);
         loginButton = (Button) findViewById(R.id.loginButton);
         passwordLogin = (EditText) findViewById(R.id.passwordLogin);
@@ -49,6 +51,7 @@ public class LoginActivity extends Activity {
                                 //login success
                                 Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);
                                 startActivity(intent);
+                                finish();
                             } else {
                                 //login fail
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
@@ -82,6 +85,18 @@ public class LoginActivity extends Activity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        ParseUser parseUser = new ParseUser().getCurrentUser();
+        if (parseUser != null) {
+            Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     @Override
