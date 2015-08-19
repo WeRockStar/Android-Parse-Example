@@ -27,7 +27,6 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Parse.initialize(this, "95I4LvWem7H4dIYI1MfnWRQjRdcziQHh76Rh6x9A", "yKUWKoKqe1hnGtsX6io12mZOSjkGdN5r7RliyR6Z");
         registerButton = (Button) findViewById(R.id.registerButton);
         loginButton = (Button) findViewById(R.id.loginButton);
         passwordLogin = (EditText) findViewById(R.id.passwordLogin);
@@ -68,7 +67,7 @@ public class LoginActivity extends Activity {
                             Log.e("ERROR" , ex.getMessage().toString());
                         }
 
-                    }
+                    }//end done
                 });
             }
         });

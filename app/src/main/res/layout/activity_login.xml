@@ -32,7 +32,7 @@
         android:gravity="center_horizontal"
         android:text="or"
         android:textColor="#000"
-        android:textSize="18dp" />
+        android:textSize="15dp" />
 
     <Button
         android:id="@+id/registerButton"

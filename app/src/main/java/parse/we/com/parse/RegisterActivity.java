@@ -53,9 +53,10 @@ public class RegisterActivity extends Activity {
                                 //signup success
                                 Intent intent = new Intent(RegisterActivity.this, HomepageActivity.class);
                                 startActivity(intent);
+                                finish();
                             } else {
                                 //signup error
-                                Log.e("Error Parse", e.getMessage().toString());
+                                Log.e("ERROR", e.getMessage().toString());
                                 Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_LONG).show();
                             }
                         } catch (Exception ex) {
