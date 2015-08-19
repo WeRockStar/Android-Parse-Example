@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".RegisterActivity"
-            android:label="@string/app_name" >
+            android:label="Register" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,11 +21,11 @@
         </activity>
         <activity
             android:name=".HomepageActivity"
-            android:label="@string/title_activity_register" >
+            android:label="Home" >
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:label="Log In" >
         </activity>
     </application>
 
