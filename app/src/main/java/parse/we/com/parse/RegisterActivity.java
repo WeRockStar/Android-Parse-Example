@@ -3,6 +3,7 @@ package parse.we.com.parse;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,8 +27,6 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        Parse.initialize(this, "95I4LvWem7H4dIYI1MfnWRQjRdcziQHh76Rh6x9A", "yKUWKoKqe1hnGtsX6io12mZOSjkGdN5r7RliyR6Z");
         mUsername = (EditText) findViewById(R.id.usernameRegister);
         mEmail = (EditText) findViewById(R.id.emailRegister);
         mUserPassword = (EditText) findViewById(R.id.passwordRegister);
@@ -49,18 +48,31 @@ public class RegisterActivity extends Activity {
                 user.signUpInBackground(new SignUpCallback() {
                     @Override
                     public void done(ParseException e) {
-                        if (e == null) {
-                            //signup success
-                            Intent intent = new Intent(RegisterActivity.this, HomepageActivity.class);
-                            startActivity(intent);
-                        } else {
-                            //signup error
-                            Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_LONG).show();
+                        try {
+                            if (e == null) {
+                                //signup success
+                                Intent intent = new Intent(RegisterActivity.this, HomepageActivity.class);
+                                startActivity(intent);
+                            } else {
+                                //signup error
+                                Log.e("Error Parse", e.getMessage().toString());
+                                Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception ex) {
+                            Log.e("ERROR" , ex.getMessage().toString());
                         }
+
                     }
                 });
             }
         });
     }
 
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+    }
 }
