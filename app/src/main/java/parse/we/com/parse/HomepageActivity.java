@@ -9,13 +9,13 @@ import com.parse.Parse;
 import com.parse.ParseObject;
 
 
-public class MainActivity extends Activity {
+public class HomepageActivity extends Activity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_homepage);
 
         Parse.initialize(this, "95I4LvWem7H4dIYI1MfnWRQjRdcziQHh76Rh6x9A", "yKUWKoKqe1hnGtsX6io12mZOSjkGdN5r7RliyR6Z");
         ParseObject gameScore = new ParseObject("GameScore");
