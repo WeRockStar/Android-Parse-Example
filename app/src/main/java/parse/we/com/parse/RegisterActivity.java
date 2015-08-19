@@ -1,6 +1,7 @@
 package parse.we.com.parse;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,8 @@ import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class RegisterActivity extends Activity {
 
@@ -60,7 +63,7 @@ public class RegisterActivity extends Activity {
                                 Toast.makeText(RegisterActivity.this, "Error", Toast.LENGTH_LONG).show();
                             }
                         } catch (Exception ex) {
-                            Log.e("ERROR" , ex.getMessage().toString());
+                            Log.e("ERROR", ex.getMessage().toString());
                         }
 
                     }
@@ -69,11 +72,8 @@ public class RegisterActivity extends Activity {
         });
     }
 
-
     @Override
-    protected void onStart() {
-        super.onStart();
-
-
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

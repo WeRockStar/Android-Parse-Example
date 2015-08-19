@@ -2,6 +2,7 @@ package parse.we.com.parse;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +15,8 @@ import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class LoginActivity extends Activity {
 
@@ -64,7 +67,7 @@ public class LoginActivity extends Activity {
 
                             }
                         } catch (Exception ex) {
-                            Log.e("ERROR" , ex.getMessage().toString());
+                            Log.e("ERROR", ex.getMessage().toString());
                         }
 
                     }//end done
@@ -81,5 +84,9 @@ public class LoginActivity extends Activity {
         });
     }
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 }

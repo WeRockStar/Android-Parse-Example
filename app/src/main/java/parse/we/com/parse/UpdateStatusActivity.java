@@ -28,6 +28,13 @@ public class UpdateStatusActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_status);
 
+        ParseUser cuParseUser = ParseUser.getCurrentUser();
+        if (cuParseUser == null) {
+            Intent intent = new Intent(UpdateStatusActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         postButton = (Button) findViewById(R.id.postButton);
         updateStatusEditText = (EditText) findViewById(R.id.updateStatusEditText);
 

@@ -16,7 +16,7 @@ public class ParseInitial extends Application {
         Parse.initialize(this, "95I4LvWem7H4dIYI1MfnWRQjRdcziQHh76Rh6x9A", "yKUWKoKqe1hnGtsX6io12mZOSjkGdN5r7RliyR6Z");
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/Roboto-Bold.ttf")
+                .setDefaultFontPath("fonts/Roboto-Light.ttf")
                 .setFontAttrId(R.attr.fontPath)
                 .build());
 
