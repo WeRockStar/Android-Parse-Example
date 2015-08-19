@@ -11,7 +11,7 @@ public class RegisterActivity extends Activity {
 
     protected EditText mUsername;
     protected EditText mEmail;
-    protected EditText mUserpassword;
+    protected EditText mUserPassword;
     protected Button mRegisterButton;
 
     @Override
@@ -21,7 +21,7 @@ public class RegisterActivity extends Activity {
 
         mUsername = (EditText)findViewById(R.id.usernameRegister);
         mEmail = (EditText)findViewById(R.id.emailRegister);
-        mUserpassword = (EditText)findViewById(R.id.passwordRegister);
+        mUserPassword = (EditText)findViewById(R.id.passwordRegister);
         mRegisterButton = (Button)findViewById(R.id.buttonSignUp);
     }
 
