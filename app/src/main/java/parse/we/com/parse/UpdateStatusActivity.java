@@ -4,13 +4,22 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class UpdateStatusActivity extends Activity {
+
+    private EditText updateStatusEditText;
+    private Button postButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_status);
+        
+        postButton = (Button) findViewById(R.id.postButton);
+        updateStatusEditText = (EditText) findViewById(R.id.updateStatusEditText);
+
     }
 
     @Override

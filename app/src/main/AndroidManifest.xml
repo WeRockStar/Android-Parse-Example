@@ -29,7 +29,7 @@
         </activity>
         <activity
             android:name=".UpdateStatusActivity"
-            android:label="@string/title_activity_update_status" >
+            android:label="Update Status" >
         </activity>
     </application>
 
