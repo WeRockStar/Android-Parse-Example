@@ -8,13 +8,17 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username" />
+        android:text="Username"
+        android:textColor="#000"
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/comment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="comment" />
+        android:text="comment"
+        android:textColor="#000"
+        android:textSize="20dp" />
 
 
 </LinearLayout>

@@ -20,7 +20,7 @@ public class StatusAdapter extends ArrayAdapter<ParseObject> {
     protected List<ParseObject> mStatus;
 
     public StatusAdapter(Context context, List<ParseObject> status) {
-        super(context, R.layout.homepage_custom_layout);
+        super(context, R.layout.homepage_custom_layout, status);
         this.context = context;
         this.mStatus = status;
     }
