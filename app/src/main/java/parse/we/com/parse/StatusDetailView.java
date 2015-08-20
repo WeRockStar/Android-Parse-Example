@@ -32,9 +32,10 @@ public class StatusDetailView extends Activity {
             @Override
             public void done(ParseObject parseObject, ParseException e) {
                 if (e == null) {
-
+                    String userStatus = parseObject.getString("status");
+                    statusText.setText(userStatus);
                 } else {
-                    
+
                 }
             }
         });
