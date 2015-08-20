@@ -1,16 +1,24 @@
 package parse.we.com.parse;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.ParseObject;
+
 public class StatusDetailView extends AppCompatActivity {
+
+    String objectId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status_detail_view);
+
+        Intent getIntent = getIntent();
+        getIntent.getStringExtra("objectId");
     }
 
     @Override

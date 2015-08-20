@@ -94,8 +94,10 @@ public class HomepageActivity extends ListActivity {
         ParseObject parseObject = mStatus.get(position);
         String objectId = parseObject.getObjectId();
 
-        Intent intent = new Intent(HomepageActivity.this , StatusDetailView.class);
-        
+        Intent intentGoToDetail = new Intent(HomepageActivity.this, StatusDetailView.class);
+        intentGoToDetail.putExtra("objectId", objectId);
+        startActivity(intentGoToDetail);
+
     }
 
     @Override
