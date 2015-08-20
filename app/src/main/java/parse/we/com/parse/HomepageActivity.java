@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -82,6 +85,16 @@ public class HomepageActivity extends ListActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        ParseObject parseObject = mStatus.get(position);
+        String objectId = parseObject.getObjectId();
+
+        Toast.makeText(getApplicationContext(), objectId, Toast.LENGTH_SHORT).show();
     }
 
     @Override
