@@ -16,15 +16,17 @@
     <EditText
         android:id="@+id/passwordLogin"
         android:layout_width="match_parent"
-        android:inputType="textPassword"
         android:layout_height="50dp"
-        android:hint="password" />
+        android:hint="password"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login" />
+        android:background="#2dc6c6"
+        android:text="Login"
+        android:textColor="#fff" />
 
     <TextView
         android:layout_width="match_parent"
@@ -38,5 +40,7 @@
         android:id="@+id/registerButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#c69c45"
+        android:textColor="#fff"
         android:text="Register" />
 </LinearLayout>

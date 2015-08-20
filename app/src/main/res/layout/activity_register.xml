@@ -43,5 +43,7 @@
         android:text="Sign Up"
         android:id="@+id/buttonSignUp"
         android:layout_below="@+id/passwordRegister"
+        android:background="#27c66b"
+        android:textColor="#fff"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
