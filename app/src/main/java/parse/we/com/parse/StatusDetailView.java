@@ -1,24 +1,43 @@
 package parse.we.com.parse;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.parse.GetCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
-public class StatusDetailView extends AppCompatActivity {
+public class StatusDetailView extends Activity {
 
-    String objectId;
+    String statusString;
+    TextView statusText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status_detail_view);
+        statusText = (TextView) findViewById(R.id.statusTextView);
 
-        Intent getIntent = getIntent();
-        getIntent.getStringExtra("objectId");
+        Intent intent = getIntent();
+        statusString = intent.getStringExtra("objectId");
+
+        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>("Status");
+        query.getInBackground(statusString, new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject parseObject, ParseException e) {
+                if (e == null) {
+
+                } else {
+                    
+                }
+            }
+        });
     }
 
     @Override
