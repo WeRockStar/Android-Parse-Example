@@ -94,7 +94,8 @@ public class HomepageActivity extends ListActivity {
         ParseObject parseObject = mStatus.get(position);
         String objectId = parseObject.getObjectId();
 
-        Toast.makeText(getApplicationContext(), objectId, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(HomepageActivity.this , StatusDetailView.class);
+        
     }
 
     @Override
