@@ -2,15 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
     android:orientation="vertical"
+    android:background="#ff7633"
     tools:context="parse.we.com.parse.LoginActivity">
 
     <EditText
         android:id="@+id/usernameLogin"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:background="#fff"
         android:hint="username" />
 
     <EditText
@@ -18,6 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:hint="password"
+        android:background="#fff"
         android:inputType="textPassword" />
 
     <Button
